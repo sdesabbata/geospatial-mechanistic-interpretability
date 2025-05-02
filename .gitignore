@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Other
+.Rhistory
+.RData
+.DS_Store
+README.html
+code/lightning_logs

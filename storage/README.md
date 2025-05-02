@@ -1,0 +1,5 @@
+# Storage
+
+The input and intermediate data used in this project are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), available to download here (*coming soon*) and should be copied in this folder.
+
+This project uses [Free Gazetteer Data](https://download.geonames.org/export/dump/) made available by [GeoNames](https://www.geonames.org/) under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), a [file containing the names of the Italian provinces](https://figshare.com/articles/dataset/Italian_provinces_2018/12249575?file=22534718) made available by [Michele Tizzoni](https://micheletizzoni.github.io/) under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), and data derived from them using [Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2), which was made available by the [Mistral AI Team](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2#the-mistral-ai-team) under [Apache License 2.0](https://huggingface.co/datasets/choosealicense/licenses/blob/main/markdown/apache-2.0.md).

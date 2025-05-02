@@ -1,0 +1,267 @@
+$ python code/101_create_tesor.py 
+
+
+GB layer 07 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 6294 entries, 0 to 0
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     6294 non-null   object
+ 1   prompt        6294 non-null   object
+ 2   layer         6294 non-null   object
+ 3   activations   6294 non-null   object
+ 4   mean_pooling  6294 non-null   object
+ 5   max_pooling   6294 non-null   object
+dtypes: object(6)
+memory usage: 344.2+ KB
+None
+
+
+IT layer 07 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 9959 entries, 0 to 0
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     9959 non-null   object
+ 1   prompt        9959 non-null   object
+ 2   layer         9959 non-null   object
+ 3   activations   9959 non-null   object
+ 4   mean_pooling  9959 non-null   object
+ 5   max_pooling   9959 non-null   object
+dtypes: object(6)
+memory usage: 544.6+ KB
+None
+
+
+NYmetro layer 07 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 4090 entries, 0 to 0
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     4090 non-null   object
+ 1   prompt        4090 non-null   object
+ 2   layer         4090 non-null   object
+ 3   activations   4090 non-null   object
+ 4   mean_pooling  4090 non-null   object
+ 5   max_pooling   4090 non-null   object
+dtypes: object(6)
+memory usage: 223.7+ KB
+None
+
+
+Info dataframe
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 20343 entries, 0 to 20342
+Data columns (total 4 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   geonameid  20343 non-null  object
+ 1   prompt     20343 non-null  object
+ 2   layer      20343 non-null  object
+ 3   area       20343 non-null  object
+dtypes: object(4)
+memory usage: 635.8+ KB
+None
+  geonameid                    prompt layer area
+0   2633327  Zeal Monachorum, England     7   GB
+1   2633337         Ystalyfera, Wales     7   GB
+2   2633344          Yoxford, England     7   GB
+3   2633345           Yoxall, England     7   GB
+4   2633346       Youlgreave, England     7   GB
+
+
+All activations layer 07
+torch.Size([20343, 4096])
+
+
+tensor([[ 0.6232,  0.5116,  0.0836,  ...,  1.6108,  0.2640,  0.3667],
+        [-0.3211, -0.4675, -1.2339,  ..., -0.0823,  0.9088, -0.1670],
+        [ 0.3516, -0.2345, -0.4529,  ...,  0.6853,  0.5890, -0.0107],
+        ...,
+        [ 0.4457,  0.6480,  0.3073,  ...,  0.2733,  0.4307,  0.1154],
+        [ 0.2846, -0.0772, -0.2076,  ...,  0.3367, -0.0020, -0.1713],
+        [-0.0728, -0.1081, -0.4032,  ...,  0.3543,  0.6433, -0.1316]])
+
+
+Tesors and info correctly saved.
+
+
+GB layer 15 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 6294 entries, 1 to 1
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     6294 non-null   object
+ 1   prompt        6294 non-null   object
+ 2   layer         6294 non-null   object
+ 3   activations   6294 non-null   object
+ 4   mean_pooling  6294 non-null   object
+ 5   max_pooling   6294 non-null   object
+dtypes: object(6)
+memory usage: 344.2+ KB
+None
+
+
+IT layer 15 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 9959 entries, 1 to 1
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     9959 non-null   object
+ 1   prompt        9959 non-null   object
+ 2   layer         9959 non-null   object
+ 3   activations   9959 non-null   object
+ 4   mean_pooling  9959 non-null   object
+ 5   max_pooling   9959 non-null   object
+dtypes: object(6)
+memory usage: 544.6+ KB
+None
+
+
+NYmetro layer 15 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 4090 entries, 1 to 1
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     4090 non-null   object
+ 1   prompt        4090 non-null   object
+ 2   layer         4090 non-null   object
+ 3   activations   4090 non-null   object
+ 4   mean_pooling  4090 non-null   object
+ 5   max_pooling   4090 non-null   object
+dtypes: object(6)
+memory usage: 223.7+ KB
+None
+
+
+Info dataframe
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 20343 entries, 0 to 20342
+Data columns (total 4 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   geonameid  20343 non-null  object
+ 1   prompt     20343 non-null  object
+ 2   layer      20343 non-null  object
+ 3   area       20343 non-null  object
+dtypes: object(4)
+memory usage: 635.8+ KB
+None
+  geonameid                    prompt layer area
+0   2633327  Zeal Monachorum, England    15   GB
+1   2633337         Ystalyfera, Wales    15   GB
+2   2633344          Yoxford, England    15   GB
+3   2633345           Yoxall, England    15   GB
+4   2633346       Youlgreave, England    15   GB
+
+
+All activations layer 15
+torch.Size([20343, 4096])
+
+
+tensor([[ 0.2353, -1.2177, -0.0274,  ...,  1.7865,  0.5786,  0.5703],
+        [ 0.1286, -2.3203, -0.6118,  ...,  0.2748,  1.1327,  0.1977],
+        [-0.0824, -2.4781,  0.3281,  ...,  0.5968,  0.8663,  0.5510],
+        ...,
+        [ 0.6047, -0.5516,  0.5242,  ...,  0.2139,  2.0172,  1.1659],
+        [ 0.2861, -1.4282, -0.7054,  ...,  0.5894,  0.3366,  1.7259],
+        [-0.3531, -1.5120, -0.0421,  ...,  0.1903,  0.8470,  0.3361]])
+
+
+Tesors and info correctly saved.
+
+
+GB layer 31 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 6294 entries, 2 to 2
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     6294 non-null   object
+ 1   prompt        6294 non-null   object
+ 2   layer         6294 non-null   object
+ 3   activations   6294 non-null   object
+ 4   mean_pooling  6294 non-null   object
+ 5   max_pooling   6294 non-null   object
+dtypes: object(6)
+memory usage: 344.2+ KB
+None
+
+
+IT layer 31 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 9959 entries, 2 to 2
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     9959 non-null   object
+ 1   prompt        9959 non-null   object
+ 2   layer         9959 non-null   object
+ 3   activations   9959 non-null   object
+ 4   mean_pooling  9959 non-null   object
+ 5   max_pooling   9959 non-null   object
+dtypes: object(6)
+memory usage: 544.6+ KB
+None
+
+
+NYmetro layer 31 info
+<class 'pandas.core.frame.DataFrame'>
+Index: 4090 entries, 2 to 2
+Data columns (total 6 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   geonameid     4090 non-null   object
+ 1   prompt        4090 non-null   object
+ 2   layer         4090 non-null   object
+ 3   activations   4090 non-null   object
+ 4   mean_pooling  4090 non-null   object
+ 5   max_pooling   4090 non-null   object
+dtypes: object(6)
+memory usage: 223.7+ KB
+None
+
+
+Info dataframe
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 20343 entries, 0 to 20342
+Data columns (total 4 columns):
+ #   Column     Non-Null Count  Dtype 
+---  ------     --------------  ----- 
+ 0   geonameid  20343 non-null  object
+ 1   prompt     20343 non-null  object
+ 2   layer      20343 non-null  object
+ 3   area       20343 non-null  object
+dtypes: object(4)
+memory usage: 635.8+ KB
+None
+  geonameid                    prompt layer area
+0   2633327  Zeal Monachorum, England    31   GB
+1   2633337         Ystalyfera, Wales    31   GB
+2   2633344          Yoxford, England    31   GB
+3   2633345           Yoxall, England    31   GB
+4   2633346       Youlgreave, England    31   GB
+
+
+All activations layer 31
+torch.Size([20343, 4096])
+
+
+tensor([[ 2.4208, -0.0149,  0.4740,  ...,  0.6588, -0.2561, -0.6207],
+        [ 1.6883, -1.2748, -0.8469,  ..., -0.9799, -1.8876, -0.6690],
+        [ 1.4841, -0.9744, -2.1130,  ..., -0.0063, -1.3844, -0.5851],
+        ...,
+        [ 0.5815,  0.5101, -1.2124,  ...,  0.8434, -1.1250,  1.8202],
+        [ 1.7499, -0.3738, -1.2681,  ...,  0.5102,  1.3494,  2.4933],
+        [ 0.8456,  0.4086, -0.7003,  ...,  1.0045,  1.4516,  1.5712]])
+
+
+Tesors and info correctly saved.
+(torch-2-5-1_cuda) sds27@gge-pc0003:~/repos/llm-geoprobing-dev$ 
+
