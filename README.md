@@ -1,6 +1,6 @@
-# Geospatial Mechanistic Interpretability
+# Geospatial Mechanistic Interpretability of LLMs
 
-This repository includes the code and data that support the findings of a *forthcoming* book chapter. 
+This repository includes the code and data that support the findings of a *forthcoming* book chapter on the Geospatial Mechanistic Interpretability of Large Language Models (LLMs).
 The Author Accepted Manuscript is available on arXiv *(coming soon)*.
 Published version: 
 
