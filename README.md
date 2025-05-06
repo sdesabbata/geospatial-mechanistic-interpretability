@@ -1,20 +1,10 @@
 # Geospatial Mechanistic Interpretability
 
-This repository includes the code and data that support the findings of the *forthcoming* book chapter:
+This repository includes the code and data that support the findings of a *forthcoming* book chapter. 
+The Author Accepted Manuscript is available on arXiv *(coming soon)*.
+Published version: 
 
-**De Sabbata, S., Mizzaro, S. and Roitero, K. (2025) “Geospatial mechanistic interpretability of large language models,” in Janowicz, K. et al. (eds.) Geography according to ChatGPT. IOS Press (Frontiers in artificial intelligence and applications).**
-
-```
-@incollection{desabbata2025geomechinterp,
-  author    = {De Sabbata, Stef and Mizzaro, Stefano and Roitero, Kevin},
-  title     = {Geospatial Mechanistic Interpretability of Large Language Models},
-  booktitle = {Geography According to ChatGPT},
-  publisher = {IOS Press},
-  year      = {2025},
-  editor    = {Janowicz, Krzysztof and Cai, Ling and Mai, Gengchen and Bennett, Lauren and Zhu, Rui and Gao, Song and Hu, Yingjie and Wang, Zhangyu},
-  series    = {Frontiers in Artificial Intelligence and Applications}
-}
-```
+**De Sabbata, S., Mizzaro, S. and Roitero, K. Geospatial mechanistic interpretability of large language models. In Janowicz, K. et al. editors. Geography according to ChatGPT. Frontiers in artificial intelligence and applications. IOS Press; forthcoming.**
 
 ## Abstract
 
@@ -25,6 +15,21 @@ In this chapter, we establish a novel framework for the study of geospatial mech
 We first outline the use of probing in revealing internal structures within LLMs. We then introduce the field of mechanistic interpretability, discussing the superposition hypothesis and the role of sparse autoencoders in disentangling polysemantic internal representations of LLMs into more interpretable, monosemantic features.
 
 In our experiments, we use spatial autocorrelation to show how features obtained for placenames display spatial patterns related to their geographic location and can thus be interpreted geospatially, providing insights into how these models process geographical information. We conclude by discussing how our framework can help shape the study and use of foundation models in geography.
+
+## Framework
+
+![An example illustrating the extraction of the activations from an LLM (top); the use of the activations in a linear probe to predict the latitude and longitude of the place mentioned in the input (bottom-left) and a sparse autoencoder (bottom-right); and the use of spatial autocorrelation to analyse the activations and the sparse features (centre). Our approach encompasses the latter two components.](paper/img_probing-and-sae_v1-0.png)
+
+## Results
+
+### Analysis of activations
+
+![Activations captured for the input placenames at different layers of the LLM (left for each region) and their local spatial autocorrelation (local Moran's $I$ clusters, $p<.01$, right for each region), illustrating the polysemantic nature of its internal representations. Two neurons at layers 7 (a) and 15 (b) show high values for the State of New York and Northern Ireland and very low values for northern Italy. A neuron at layer (c) 15 shows high values for several UK cities. A neuron at layer 31 (d) shows high values for the State of New York and Northern Ireland and diverse values for provinces in Italy.](paper/img_results-probing_v1-0.png)
+
+
+### Analysis of SAE features
+
+![Features extracted from layer 15 through a sparse autoencoder (left for each region) and their local spatial autocorrelation (local Moran's $I$ clusters, $p<.01$, right for each region): (a) Wales as a region part of prompt; (b) south of Italy as a region activating a seemingly monosemantic feature; (c) north-east of Italy and north-west of England as regions activating a seemingly polysemantic feature; and (d) a representation of ``city'' highlighting New York City and London, amongst others.](paper/img_results-sparse-autoencoder_v1-0.png)
 
 ## License
 
