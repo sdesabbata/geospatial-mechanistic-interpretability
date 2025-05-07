@@ -1,8 +1,7 @@
 # Geospatial Mechanistic Interpretability of LLMs
 
-This repository includes the code and data that support the findings of a *forthcoming* book chapter on the Geospatial Mechanistic Interpretability of Large Language Models (LLMs).
-The Author Accepted Manuscript is available on arXiv *(coming soon)*.
-Published version: 
+This repository includes the code and data that support the findings of a *forthcoming* book chapter (see reference below).
+The Author Accepted Manuscript of "[Geospatial Mechanistic Interpretability of Large Language Models](https://arxiv.org/abs/2505.03368)" available on arXiv ([arXiv:2505.03368](https://arxiv.org/abs/2505.03368)).
 
 **De Sabbata, S., Mizzaro, S. and Roitero, K. Geospatial mechanistic interpretability of large language models. In Janowicz, K. et al. editors. Geography according to ChatGPT. Frontiers in artificial intelligence and applications. IOS Press; forthcoming.**
 
@@ -22,12 +21,12 @@ In our experiments, we use spatial autocorrelation to show how features obtained
 
 ## Results
 
-### Analysis of activations
+### Spatial analysis of activations
 
 ![Activations captured for the input placenames at different layers of the LLM (left for each region) and their local spatial autocorrelation (local Moran's $I$ clusters, $p<.01$, right for each region), illustrating the polysemantic nature of its internal representations. Two neurons at layers 7 (a) and 15 (b) show high values for the State of New York and Northern Ireland and very low values for northern Italy. A neuron at layer (c) 15 shows high values for several UK cities. A neuron at layer 31 (d) shows high values for the State of New York and Northern Ireland and diverse values for provinces in Italy.](paper/img_results-probing_v1-0.png)
 
 
-### Analysis of SAE features
+### Spatial analysis of SAE features
 
 ![Features extracted from layer 15 through a sparse autoencoder (left for each region) and their local spatial autocorrelation (local Moran's $I$ clusters, $p<.01$, right for each region): (a) Wales as a region part of prompt; (b) south of Italy as a region activating a seemingly monosemantic feature; (c) north-east of Italy and north-west of England as regions activating a seemingly polysemantic feature; and (d) a representation of ``city'' highlighting New York City and London, amongst others.](paper/img_results-sparse-autoencoder_v1-0.png)
 
