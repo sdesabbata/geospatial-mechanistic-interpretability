@@ -179,3 +179,5 @@ cython_debug/
 .DS_Store
 README.html
 code/lightning_logs
+/storage/**
+!/storage/README.md
