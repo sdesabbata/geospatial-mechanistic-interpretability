@@ -80,12 +80,20 @@ def plot_features_map(features_df, features_crs, layer, feature_name, gsa_df, cm
         column=feature_name, 
         cmap=cmap, 
         norm=norm, 
-        markersize=1
+        markersize=2
         )
     ax.set_axis_off()
     ax.set_title(map_title, fontsize=15)
-    cbar = fig.colorbar(sm, ax=ax, boundaries=breaks, ticks=breaks, orientation='horizontal', spacing='proportional', drawedges=True, pad=0.1, aspect=40, shrink=0.75)
-    cbar.ax.tick_params(labelsize=10)
+    cbar = fig.colorbar(
+        sm, ax=ax,
+        boundaries=breaks, ticks=breaks,
+        orientation='vertical',
+        location='left',
+        spacing='proportional',
+        drawedges=True,
+        pad=0.1, aspect=40, shrink=0.75
+    )
+    cbar.ax.tick_params(labelsize=15)
     plt.savefig(map_filename, dpi=300, bbox_inches='tight')
     plt.close()
 
@@ -103,25 +111,28 @@ all_moran_df['layer_num']  = all_moran_df['layer'].apply(lambda x: x.split('-')[
 
 print(all_moran_df.groupby(['layer', 'layer_area', 'layer_num']).size().reset_index(name='count'))
 
-feature_names_07 = all_moran_df[all_moran_df['layer_num'] == '07']['sae_feat_name'].unique()
 feature_names_15 = all_moran_df[all_moran_df['layer_num'] == '15']['sae_feat_name'].unique()
-feature_names_31 = all_moran_df[all_moran_df['layer_num'] == '31']['sae_feat_name'].unique()
 
 # Maps --------------------------------------------------------------------
 
 print('\nCreate maps:')
 cmap = plt.get_cmap('viridis')
 
-for feature_name in tqdm(feature_names_15, 'Layer 15'):
+# Generate all maps
+# for feature_name in tqdm(feature_names_15, 'Layer 15'):
+# Generate manuscript maps
+for feature_name in tqdm(['saef001473','saef006239', 'saef021931', 'saef025085'], 'Layer 15'):
 
     this_feat_gb_l15 = feat_gb_l15[feature_name].values.tolist()
     this_feat_it_l15 = feat_it_l15[feature_name].values.tolist()
     this_feat_ny_l15 = feat_ny_l15[feature_name].values.tolist()
 
     combined_values = np.array(this_feat_gb_l15 + this_feat_it_l15 + this_feat_ny_l15)
+    combined_values_min = combined_values.min()
 
     jenks = mapclassify.NaturalBreaks(combined_values, k=9)
     breaks = jenks.bins
+    breaks = np.insert(breaks, 0, combined_values_min)
     # print("Jenks Natural Breaks:", breaks)
     norm = BoundaryNorm(boundaries=breaks, ncolors=cmap.N)
 
@@ -129,4 +140,4 @@ for feature_name in tqdm(feature_names_15, 'Layer 15'):
     plot_features_map(feat_it_l15, 25832,      'IT-l15', feature_name, all_moran_df, cmap, norm, breaks)
     plot_features_map(feat_ny_l15, 32618, 'NYmetro-l15', feature_name, all_moran_df, cmap, norm, breaks)
 
-    del this_feat_gb_l15, this_feat_it_l15, this_feat_ny_l15, combined_values, jenks, breaks, norm
+    del this_feat_gb_l15, this_feat_it_l15, this_feat_ny_l15, combined_values, combined_values_min, jenks, breaks, norm

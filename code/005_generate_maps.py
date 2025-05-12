@@ -63,12 +63,20 @@ def plot_activations_map(activations_df, activations_crs, layer, activation_name
         column=activation_name, 
         cmap=cmap, 
         norm=norm, 
-        markersize=1
+        markersize=2
         )
     ax.set_axis_off()
     ax.set_title(map_title, fontsize=15)
-    cbar = fig.colorbar(sm, ax=ax, boundaries=breaks, ticks=breaks, orientation='horizontal', spacing='proportional', drawedges=True, pad=0.1, aspect=40, shrink=0.75)
-    cbar.ax.tick_params(labelsize=10)
+    cbar = fig.colorbar(
+        sm, ax=ax,
+        boundaries=breaks, ticks=breaks,
+        orientation='vertical',
+        location='left',
+        spacing='proportional',
+        drawedges=True,
+        pad=0.1, aspect=40, shrink=0.75
+    )
+    cbar.ax.tick_params(labelsize=15)
     plt.savefig(map_filename, dpi=300, bbox_inches='tight')
     plt.close()
 
@@ -109,16 +117,21 @@ if user_input.lower() != 'y':
     print(          'Exiting...')
     sys.exit(1)
 
-for activation_name in tqdm(activation_names_07, 'Layer 07'):
+# Generate all maps
+# for activation_name in tqdm(activation_names_07, 'Layer 07'):
+# Generate manuscript maps
+for activation_name in tqdm(['act000497'], 'Layer 07'):
 
     this_amp_gb_l07 = amp_gb_l07[activation_name].values.tolist()
     this_amp_it_l07 = amp_it_l07[activation_name].values.tolist()
     this_amp_ny_l07 = amp_ny_l07[activation_name].values.tolist()
 
     combined_values = np.array(this_amp_gb_l07 + this_amp_it_l07 + this_amp_ny_l07)
+    combined_values_min = combined_values.min()
 
     jenks = mapclassify.NaturalBreaks(combined_values, k=9)
     breaks = jenks.bins
+    breaks = np.insert(breaks, 0, combined_values_min)
     # print("Jenks Natural Breaks:", breaks)
     norm = BoundaryNorm(boundaries=breaks, ncolors=cmap.N)
 
@@ -126,7 +139,7 @@ for activation_name in tqdm(activation_names_07, 'Layer 07'):
     plot_activations_map(amp_it_l07, 25832,      'IT-l07', activation_name, all_moran_df, cmap, norm, breaks)
     plot_activations_map(amp_ny_l07, 32618, 'NYmetro-l07', activation_name, all_moran_df, cmap, norm, breaks)
 
-    del this_amp_gb_l07, this_amp_it_l07, this_amp_ny_l07, combined_values, jenks, breaks, norm
+    del this_amp_gb_l07, this_amp_it_l07, this_amp_ny_l07, combined_values, combined_values_min, jenks, breaks, norm
 
 
 user_input = input(f'Do you want to continue processing layer 15? (y/N): ')
@@ -134,16 +147,21 @@ if user_input.lower() != 'y':
     print(          'Exiting...')
     sys.exit(1)
 
-for activation_name in tqdm(activation_names_15, 'Layer 15'):
+# Generate all maps
+# for activation_name in tqdm(activation_names_15, 'Layer 15'):
+# Generate manuscript maps
+for activation_name in tqdm(['act000497', 'act001657'], 'Layer 15'):
 
     this_amp_gb_l15 = amp_gb_l15[activation_name].values.tolist()
     this_amp_it_l15 = amp_it_l15[activation_name].values.tolist()
     this_amp_ny_l15 = amp_ny_l15[activation_name].values.tolist()
 
     combined_values = np.array(this_amp_gb_l15 + this_amp_it_l15 + this_amp_ny_l15)
+    combined_values_min = combined_values.min()
 
     jenks = mapclassify.NaturalBreaks(combined_values, k=9)
     breaks = jenks.bins
+    breaks = np.insert(breaks, 0, combined_values_min)
     # print("Jenks Natural Breaks:", breaks)
     norm = BoundaryNorm(boundaries=breaks, ncolors=cmap.N)
 
@@ -151,7 +169,7 @@ for activation_name in tqdm(activation_names_15, 'Layer 15'):
     plot_activations_map(amp_it_l15, 25832,      'IT-l15', activation_name, all_moran_df, cmap, norm, breaks)
     plot_activations_map(amp_ny_l15, 32618, 'NYmetro-l15', activation_name, all_moran_df, cmap, norm, breaks)
 
-    del this_amp_gb_l15, this_amp_it_l15, this_amp_ny_l15, combined_values, jenks, breaks, norm
+    del this_amp_gb_l15, this_amp_it_l15, this_amp_ny_l15, combined_values, combined_values_min, jenks, breaks, norm
 
 
 user_input = input(f'Do you want to continue processing layer 31? (y/N): ')
@@ -159,16 +177,21 @@ if user_input.lower() != 'y':
     print(          'Exiting...')
     sys.exit(1)
 
-for activation_name in tqdm(activation_names_31, 'Layer 31'):
+# Generate all maps
+# for activation_name in tqdm(activation_names_31, 'Layer 31'):
+# Generate manuscript maps
+for activation_name in tqdm(['act001010'], 'Layer 31'):
     
     this_amp_gb_l31 = amp_gb_l31[activation_name].values.tolist()
     this_amp_it_l31 = amp_it_l31[activation_name].values.tolist()
     this_amp_ny_l31 = amp_ny_l31[activation_name].values.tolist()
 
     combined_values = np.array(this_amp_gb_l31 + this_amp_it_l31 + this_amp_ny_l31)
+    combined_values_min = combined_values.min()
 
     jenks = mapclassify.NaturalBreaks(combined_values, k=9)
     breaks = jenks.bins
+    breaks = np.insert(breaks, 0, combined_values_min)
     # print("Jenks Natural Breaks:", breaks)
     norm = BoundaryNorm(boundaries=breaks, ncolors=cmap.N)
 
@@ -176,4 +199,4 @@ for activation_name in tqdm(activation_names_31, 'Layer 31'):
     plot_activations_map(amp_it_l31, 25832,      'IT-l31', activation_name, all_moran_df, cmap, norm, breaks)
     plot_activations_map(amp_ny_l31, 32618, 'NYmetro-l31', activation_name, all_moran_df, cmap, norm, breaks)
 
-    del this_amp_gb_l31, this_amp_it_l31, this_amp_ny_l31, combined_values, jenks, breaks, norm
+    del this_amp_gb_l31, this_amp_it_l31, this_amp_ny_l31, combined_values, combined_values_min, jenks, breaks, norm
